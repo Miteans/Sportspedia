@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "sportspediasite": {
+    "SportsPedia": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/sportspediasite",
+            "outputPath": "dist/SportsPedia",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "sportspediasite:build"
+            "browserTarget": "SportsPedia:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "sportspediasite:build:production"
+              "browserTarget": "SportsPedia:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "sportspediasite:build"
+            "browserTarget": "SportsPedia:build"
           }
         },
         "test": {
@@ -117,16 +117,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "sportspediasite:serve"
+            "devServerTarget": "SportsPedia:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "sportspediasite:serve:production"
+              "devServerTarget": "SportsPedia:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "sportspediasite"
+  "defaultProject": "SportsPedia"
 }
