@@ -1,0 +1,21 @@
+.sidebar-nav{
+  background-color: #68B290 ;
+  color:#fff;
+  height: 500px;
+}
+.sidebar-nav ul {
+    float: none;
+    display: block;
+    position: absolute;
+    padding: 20px;
+}
+.sidebar-nav li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    color: white;
+    padding-bottom: 20px;
+    font-size: large;
+}
+.sidebar-nav h1 {
+    padding-left: 20px;
+}
