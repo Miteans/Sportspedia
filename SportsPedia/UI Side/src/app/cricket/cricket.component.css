@@ -3,19 +3,19 @@
   color:#fff;
   height: 500px;
 }
-.sidebar-nav ul {
-    float: none;
-    display: block;
-    position: absolute;
-    padding: 20px;
-}
-.sidebar-nav li a {
+.sidebar-nav .parametersPanel li {
     padding-top: 12px;
     padding-bottom: 12px;
-    color: white;
     padding-bottom: 20px;
+}
+.sidebar-nav .parametersPanel mat-panel-title {
+    color: white;
     font-size: large;
 }
-.sidebar-nav h1 {
-    padding-left: 20px;
+.sidebar-nav .parametersPanel li a{
+    color: white;
+}
+.mat-expansion-panel{
+    padding: 0;
+    background-color: #68B290;
 }

@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms'; 
 import { MatSelectModule } from '@angular/material/select';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -49,6 +50,7 @@ import { CricketComponent } from './cricket/cricket.component';
     MatSelectModule,
     MatToolbarModule,
     MatListModule,
+    MatExpansionModule,
     AppRoutingModule,
     FormsModule
   ],
