@@ -1,0 +1,15 @@
+.mat-toolbar,button{
+    background-color:#009089;
+    color:white;
+    text-align: center;
+}
+.full-width{
+    width: 95%;
+}
+button{
+    float:right;
+}
+.sp{
+    padding-left:140px;
+    cursor:pointer;
+}

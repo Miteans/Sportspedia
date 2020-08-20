@@ -1,0 +1,24 @@
+.bdy{
+    padding-top: 30px;
+    padding-left: 30px;
+    font-family: Times;
+}
+h1{
+    font-size: 37px;
+    text-align:center;
+}
+p{
+    font-size:22px;
+    line-height: 30px;
+}
+ul.b {
+    list-style-type: square;
+    font-size:19px;
+    line-height: 30px;
+}
+img{
+    padding-left: 310px;
+    width: 1000px;
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
