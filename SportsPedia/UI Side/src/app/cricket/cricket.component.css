@@ -1,23 +1,25 @@
 .sidebar-nav{
-    background-color: #008E7D;
+    background-color: #79cfb5;
     color:#fff !important;
     height: 500px;
   }
   .sidebar-nav .parametersPanel li {
-      padding-top: 25px;
-      padding-bottom: 10px;
+      padding-top: 10px;
+      padding-bottom: 8px;
       font-size:18px;
   }
   .sidebar-nav .parametersPanel li a{
       color: white;
   }
   .mat-expansion-panel{
-      padding: 0;
-      background-color: #008E7D;
+      padding-bottom: 15px;;
+      background-color: #79cfb5 !important;
       border: none;
       box-shadow: none;
+
   }
   .mat-expansion-panel-header-title {
     color: white;
     font-size: 18px;
 }
+
