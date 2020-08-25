@@ -26,6 +26,7 @@ import { SignupComponent } from './signup/signup.component';
 import { CricketService } from  './services/cricket.service';
 import { CricketComponent } from './cricket/cricket.component';
 import { InfoComponent } from './cricket/info/info.component';
+import { KabaddiComponent } from './kabaddi/kabaddi.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { InfoComponent } from './cricket/info/info.component';
     LoginComponent,
     SignupComponent,
     CricketComponent,
-    InfoComponent
+    InfoComponent,
+    KabaddiComponent
   ],
   imports: [
     BrowserModule,
