@@ -1,0 +1,26 @@
+<div class="bdy">
+    <div *ngIf="kab">
+        <h1>{{kab[0].name}}</h1>
+        <img [src] = "images">
+        <p>Kabaddi is a team sport from South Asia. 
+           Two teams are on opposite halves of a small field.
+           They take turns sending a "raider" into the other half. 
+           This is to win points by tackling members of the opposing team. 
+           Then the raider tries to return to his own half. 
+           He holds his breath and chants the word "Kabaddi" during the whole raid. 
+           The raider must not cross the lobby unless he touches any of his opponents. 
+           If he does not touch anyone then he will be "out". 
+           There is also a bonus line. If the raider touches it and returns to his side of the field, he will get extra points. 
+           If the raider is not able to get back to his own side, then he is considered "out".
+           Teams take turns sending a "raider" to the opposite team's half. The goal is to tag or wrestle ("confine") members of the opposite team. Tagged members are "out" and temporarily sent off the field.
+           The goal of the defenders is to stop the raider from returning to the home side before taking a breath. If any of the seven players cross the lobby without touching the raider he will be declared as "out".</p>
+        <p>Some known facts</p>
+        <ul class="b">
+            <li>{{kab[0].facts[0]}}</li>
+            <li>{{kab[0].facts[1]}}</li>
+            <li>{{kab[0].facts[2]}}</li>
+            <li>{{kab[0].facts[3]}}</li>
+            <li>{{kab[0].facts[4]}}</li>
+        </ul>
+    </div>
+</div>

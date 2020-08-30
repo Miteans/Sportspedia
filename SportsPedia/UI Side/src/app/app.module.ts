@@ -27,7 +27,8 @@ import { CricketService } from  './services/cricket.service';
 import { CricketComponent } from './cricket/cricket.component';
 import { InfoComponent } from './cricket/info/info.component';
 import { KabaddiComponent } from './kabaddi/kabaddi.component';
-
+import { KabinfoComponent } from './kabaddi/kabinfo/kabinfo.component';
+import { KabaddiService } from  './services/kabaddi.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { KabaddiComponent } from './kabaddi/kabaddi.component';
     SignupComponent,
     CricketComponent,
     InfoComponent,
-    KabaddiComponent
+    KabaddiComponent,
+    KabinfoComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +60,7 @@ import { KabaddiComponent } from './kabaddi/kabaddi.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [CricketService],
+  providers: [CricketService, KabaddiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

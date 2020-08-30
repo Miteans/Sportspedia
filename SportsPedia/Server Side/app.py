@@ -32,5 +32,10 @@ def get_info_of_int_teams():
     info = sd.get_int_teams_info()
     return jsonify({'int_info':info})
 
+@app.route('/kabaddi')
+def get_info_of_kabaddi():
+    info = sd.get_info_of_kabaddi()
+    return jsonify({'kabaddi_info':info})
+
 if __name__ == "__main__":
     app.run(debug=True)

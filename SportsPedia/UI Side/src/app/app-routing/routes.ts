@@ -3,6 +3,7 @@ import { HomeComponent } from '../home/home.component';
 import { CricketComponent } from '../cricket/cricket.component';
 import { InfoComponent } from '../cricket/info/info.component';
 import { KabaddiComponent } from '../kabaddi/kabaddi.component';
+import { KabinfoComponent } from '../kabaddi/kabinfo/kabinfo.component';
 
 export const routes: Routes = [
   { path: 'home',  component: HomeComponent },
@@ -13,5 +14,6 @@ export const routes: Routes = [
   { path: '', redirectTo: '/cricket/info', pathMatch: 'full' },
   { path: 'kabaddi',  component: KabaddiComponent },
   { path: '', redirectTo: '/kabaddi', pathMatch: 'full' },
-  
-];
+  { path: 'kabaddi/kabinfo',  component: KabinfoComponent },
+  { path: '', redirectTo: '/kabaddi/kabinfo', pathMatch: 'full' },
+  ];

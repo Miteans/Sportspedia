@@ -68,3 +68,13 @@ def get_int_teams_info():
     
     return int_teams
 
+def get_info_of_kabaddi():
+    kabaddi_info = []
+    k_info =  sports.aggregate([{"$match":{"name":"Kabaddi"}},
+        {"$project":{"name":1,"sports_id":1,"facts":1,"image":1,"_id":0}}
+    ])
+
+    for info in k_info:
+        kabaddi_info.append(info)
+
+    return kabaddi_info
