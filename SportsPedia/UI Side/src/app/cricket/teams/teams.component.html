@@ -1,0 +1,16 @@
+<div class="col-md-4 col-6 col-xs-6 col-sm-6">
+    <mat-label class="text-dark">International Teams</mat-label>
+    <mat-select class="inputMaterial" [(ngModel)] = "teamId">
+      <mat-option [value]="team['teamId']" *ngFor="let team of international_teams">
+        {{team['teamName']}}
+      </mat-option>
+    </mat-select>
+</div>
+
+<button mat-button type = "button" (click) = "get_players()">Submit</button>
+
+<div class="row">
+  <div class="col-md-8" *ngIf = "first_chartdata">
+    <google-chart [data] = "first_chartdata"></google-chart>
+  </div>
+</div>

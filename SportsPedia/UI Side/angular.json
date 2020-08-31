@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "SportsPedia"
+  "defaultProject": "SportsPedia",
+  "cli": {
+    "analytics": false
+  }
 }

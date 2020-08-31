@@ -42,31 +42,58 @@ def get_info_of_players():
 
     return players_info
 
+#Teams Part
 def get_ipl_teams_info():
     ipl_teams = []
 
-    i_info = sports.aggregate([{"$unwind":"$teams"},
+    ipl_info = sports.aggregate([{"$unwind":"$teams"},
     {"$match":{"name":"Cricket","teams.team_type":"ipl"}},
-    {"$project":{"sports_id":1,"teams.name":1,"teams.team_id":1,"teams.achivements":1,
-        "teams.facts":1,"_id":0}}])
+    {"$project":{"teamName":"$teams.name","teamId":"$teams.team_id","teamAchivement":"$teams.achivements",
+        "teamFacts":"$teams.facts","_id":0}}])
 
-    for info in i_info:
+    for info in ipl_info:
         ipl_teams.append(info)
     
     return ipl_teams
 
-def get_int_teams_info():
-    int_teams = []
+def get_interational_teams_info():
+    international_teams = []
 
-    int_info = sports.aggregate([{"$unwind":"$teams"},
+    international_info = sports.aggregate([{"$unwind":"$teams"},
     {"$match":{"name":"Cricket","teams.team_type":"international"}},
-    {"$project":{"sports_id":1,"teams.name":1,"teams.team_id":1,"teams.achivements":1,
-        "teams.facts":1,"_id":0}}])
+    {"$project":{"teamName":"$teams.name","teamId":"$teams.team_id","teamAchivement":"$teams.achivements",
+        "teamFacts":"$teams.facts","_id":0}}])
 
-    for info in int_info:
-        int_teams.append(info)
+    for info in international_info:
+        international_teams.append(info)
     
-    return int_teams
+    return international_teams
+
+def get_players_of_a_team(teamId):
+    team_players = []
+    players_info = players.aggregate([
+        {
+            "$unwind":"$team_id"
+        },
+        {
+            "$match":{
+                "team_id":teamId
+            }
+        },
+        {
+            "$project":{
+                "player_id":1,
+                "role":1,
+                "name":1,
+                "team_id":1,
+                "_id":0
+            }
+        }])
+
+    for info in players_info:
+        team_players.append(info)
+
+    return team_players
 
 def get_info_of_kabaddi():
     kabaddi_info = []

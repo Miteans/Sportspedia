@@ -17,20 +17,21 @@ def get_info_of_event():
     info = sd.get_info_of_event()
     return jsonify({'event_info':info})
 
-@app.route('/cricket/players')
-def get_info_of_players():
-    info = sd.get_info_of_players()
-    return jsonify({'players_info':info})
+#Teams Part
+@app.route('/cricket/players/<teamId>')
+def get_players_of_a_team(teamId):
+    team_players = sd.get_players_of_a_team(teamId)
+    return jsonify({'team_players':team_players})
 
 @app.route('/cricket/ipl-teams')
 def get_info_of_ipl_teams():
-    info = sd.get_ipl_teams_info()
-    return jsonify({'ipl_info':info})
+    ipl_cricket_teams = sd.get_ipl_teams_info()
+    return jsonify({'ipl_cricket_teams':ipl_cricket_teams})
 
 @app.route('/cricket/international-teams')
 def get_info_of_int_teams():
-    info = sd.get_int_teams_info()
-    return jsonify({'int_info':info})
+    international_cricket_teams = sd.get_interational_teams_info()
+    return jsonify({'international_cricket_teams':international_cricket_teams})
 
 @app.route('/kabaddi')
 def get_info_of_kabaddi():

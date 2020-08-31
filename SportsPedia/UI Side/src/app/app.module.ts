@@ -29,7 +29,9 @@ import { InfoComponent } from './cricket/info/info.component';
 import { KabaddiComponent } from './kabaddi/kabaddi.component';
 import { KabinfoComponent } from './kabaddi/kabinfo/kabinfo.component';
 import { KabaddiService } from  './services/kabaddi.service';
+import { TeamsComponent } from './cricket/teams/teams.component';
 
+import { Ng2GoogleChartsModule } from 'ng2-google-charts'
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,8 @@ import { KabaddiService } from  './services/kabaddi.service';
     CricketComponent,
     InfoComponent,
     KabaddiComponent,
-    KabinfoComponent
+    KabinfoComponent,
+    TeamsComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,8 @@ import { KabaddiService } from  './services/kabaddi.service';
     MatListModule,
     MatExpansionModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    Ng2GoogleChartsModule
   ],
   providers: [CricketService, KabaddiService],
   bootstrap: [AppComponent]
