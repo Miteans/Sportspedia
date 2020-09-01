@@ -33,6 +33,7 @@ def get_info_of_int_teams():
     international_cricket_teams = sd.get_interational_teams_info()
     return jsonify({'international_cricket_teams':international_cricket_teams})
 
+#kabaddi info
 @app.route('/kabaddi')
 def get_info_of_kabaddi():
     info = sd.get_info_of_kabaddi()

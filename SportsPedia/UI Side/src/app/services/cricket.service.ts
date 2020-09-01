@@ -30,4 +30,9 @@ export class CricketService {
     let url = `${this.baseurl}cricket/players/${teamId}`
     return this.http.get(url);
   }
+
+  get_event_info(): Observable<any>{
+    let url=`${this.baseurl}cricket/events`;
+    return this.http.get(url);
+  }
 }

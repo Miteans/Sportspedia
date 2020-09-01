@@ -31,7 +31,8 @@ import { KabinfoComponent } from './kabaddi/kabinfo/kabinfo.component';
 import { KabaddiService } from  './services/kabaddi.service';
 import { TeamsComponent } from './cricket/teams/teams.component';
 
-import { Ng2GoogleChartsModule } from 'ng2-google-charts'
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { PollingComponent } from './cricket/polling/polling.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { Ng2GoogleChartsModule } from 'ng2-google-charts'
     InfoComponent,
     KabaddiComponent,
     KabinfoComponent,
-    TeamsComponent
+    TeamsComponent,
+    PollingComponent
   ],
   imports: [
     BrowserModule,
