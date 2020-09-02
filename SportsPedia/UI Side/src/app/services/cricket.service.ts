@@ -31,8 +31,8 @@ export class CricketService {
     return this.http.get(url);
   }
 
-  get_event_info(): Observable<any>{
-    let url=`${this.baseurl}cricket/events`;
+  get_events_details(): Observable<any> {
+    let url = `${this.baseurl}cricket/events`;
     return this.http.get(url);
   }
 }

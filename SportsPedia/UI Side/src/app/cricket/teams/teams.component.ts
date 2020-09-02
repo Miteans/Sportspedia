@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CricketService } from 'src/app/services/cricket.service';
-import { GoogleChartInterface, GoogleChartComponent } from 'ng2-google-charts'
+import { GoogleChartInterface, GoogleChartComponent } from 'ng2-google-charts';
 
 @Component({
   selector: 'app-teams',

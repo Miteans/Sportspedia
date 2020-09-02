@@ -1,1 +1,14 @@
+<!--<div class="page">
+        <h1>Today's Events</h1>
+        <h3>RCB v/s CSK</h3>
+        <div class="sub">
+            <p>Voting available till 9:00 pm</p>
+            <p>Only one vote is allowed</p>
+            <p>Click on vote button to cast your vote for your favourite team</p>
+        </div>
+</div>-->
 
+
+  <div class="col-md-2 sub1" *ngIf = "event_data">
+    <google-chart [data] = "event_data"></google-chart>
+  </div>
