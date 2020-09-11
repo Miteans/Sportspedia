@@ -33,6 +33,18 @@ def get_info_of_int_teams():
     international_cricket_teams = sd.get_interational_teams_info()
     return jsonify({'international_cricket_teams':international_cricket_teams})
 
+#all teams of cricket
+@app.route('/cricket/teams')
+def get_info_teams():
+    teams = sd.get_teams()
+    return jsonify({'cricket_teams':teams})
+
+#current event
+@app.route('/cricket/current-event')
+def get_current_event():
+    info = sd.get_current_event()
+    return jsonify({'current_info':info})
+
 #kabaddi info
 @app.route('/kabaddi')
 def get_info_of_kabaddi():

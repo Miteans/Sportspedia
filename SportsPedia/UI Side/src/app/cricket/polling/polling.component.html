@@ -1,14 +1,18 @@
-<!--<div class="page">
-        <h1>Today's Events</h1>
-        <h3>RCB v/s CSK</h3>
-        <div class="sub">
+<div class="page">
+  <h1>Today's Events</h1>
+  <div *ngIf="events">
+    <div *ngFor="let event of event_info">
+        <h3>{{event.team_ids[0]}} v/s {{event.team_ids[1]}}</h3>
+        <div>
             <p>Voting available till 9:00 pm</p>
             <p>Only one vote is allowed</p>
             <p>Click on vote button to cast your vote for your favourite team</p>
+            <p>{{setColChartData(event.team_ids[0],event.team_ids[1])}}</p>
         </div>
-</div>-->
-
-
-  <div class="col-md-2 sub1" *ngIf = "event_data">
-    <google-chart [data] = "event_data"></google-chart>
+        <div class="col-md-2 sub1" *ngIf = "event_data">
+          <google-chart [data] = "event_data"></google-chart>
+        </div>
+    </div>
   </div>
+</div>
+  

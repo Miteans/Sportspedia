@@ -11,60 +11,61 @@ export class PollingComponent implements OnInit {
 
   events = []
   event_data: GoogleChartInterface;
+  teams_info=[];
+  event_info=[];
+  
 
   constructor(private cricketService:CricketService) { }
 
   ngOnInit(): void {
-    this.cricketService.get_events_details().subscribe(data=>{
-      this.events = data['event_info']
-      this.setColChartData();
-    })}
-    setColChartData(){
-      let t1_count = 0
-      let t2_count = 0
-      let data = []
-      this.events.forEach(element => {
-        console.log(element.team_ids[1]);
-        if(element.team_ids[0] == 'ipl_mi'){
-          t1_count=5;
-        }
-        else{
-          t2_count=6;
-        }
-      });
-  
-      data.push(['Team','Percent'])
-      data.push(['MI',t1_count])
-      data.push(['RCB',t2_count])
-      this.setChart(data)
-    }
-  
-    setChart(dataTable){
-      this.event_data =
+    
+    this.cricketService.get_current_events().subscribe(data=>{
+      var k=0;
+      this.events = data['current_info'];
+      
+    
+    this.cricketService.get_cricket_team_details().subscribe(data=>{
+      this.teams_info = data['cricket_teams'];
+      for(var i=0;i<this.events.length;i++)
       {
-        chartType: "ColumnChart",
-        dataTable: dataTable,
-        options: {
-          height: 400,
-          width: 200,
-          tooltip : {
-            textStyle:{
-              fontName: 'Lato', 
-              fontSize: '13'
-            }
-          },
-          legend: {
-            position: "top",
-            alignment: "end",
-            textStyle:{
-              fontName: 'Lato', 
-              fontSize: '14'
-            }
-          },
-          colors:["#FDA100"],
+        for(var j=0;j<this.teams_info.length;j++){
+          if(this.events[i]['team_ids'][k]==this.teams_info[j]['teams']['team_id']){
+            this.events[i]['team_ids'][k]=this.teams_info[j]['teams']['abbreviation']
+          }
+          if(this.events[i]['team_ids'][k+1]==this.teams_info[j]['teams']['team_id']){
+            this.events[i]['team_ids'][k+1]=this.teams_info[j]['teams']['abbreviation']
+          }
         }
-      };
-    }
+      }
+      
+      this.event_info=this.events;
+      console.log(this.event_info);
+      
+    })
+  })
+    
+  }
+  setColChartData(t1,t2){
+    let team1_count = 5
+    let team2_count = 6
+    let data = []
+    this.event_info.forEach(element => {
+    });
+
+    data.push(['Teams','Count'])
+    data.push([t1,team1_count])
+    data.push([t2,team2_count])
+
+    this.setChart(data)
+  }
+
+  setChart(dataTable){
+    this.event_data =
+    {
+      chartType: "ColumnChart",
+      dataTable: dataTable,
+    };
+  }
 
   }
 

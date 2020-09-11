@@ -16,6 +16,11 @@ export class CricketService {
     return this.http.get(url);
   }
 
+  get_cricket_team_details(): Observable<any>{
+    let url = `${this.baseurl}cricket/teams`
+    return this.http.get(url);
+  }
+
   get_cricket_international_team_details(): Observable<any>{
     let url = `${this.baseurl}cricket/international-teams`
     return this.http.get(url);
@@ -31,8 +36,8 @@ export class CricketService {
     return this.http.get(url);
   }
 
-  get_events_details(): Observable<any> {
-    let url = `${this.baseurl}cricket/events`;
+  get_current_events(): Observable<any> {
+    let url = `${this.baseurl}cricket/current-event`;
     return this.http.get(url);
   }
 }

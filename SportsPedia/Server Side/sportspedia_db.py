@@ -1,5 +1,7 @@
 from pymongo import MongoClient
 from pprint import pprint
+import datetime
+
 
 db = MongoClient("mongodb+srv://voicecode2379:v0icecode@cluster0-dgawx.mongodb.net/sports_details?retryWrites=true&w=majority")
 
@@ -9,6 +11,11 @@ sports = mydb['sports']
 players = mydb['players']
 users = mydb['users']
 events = mydb['events']
+
+x = datetime.datetime.now()
+
+date = x.strftime("%d/%m/%Y")
+
 
 def get_info_of_cricket():
     cricket_info = []
@@ -48,7 +55,7 @@ def get_ipl_teams_info():
 
     ipl_info = sports.aggregate([{"$unwind":"$teams"},
     {"$match":{"name":"Cricket","teams.team_type":"ipl"}},
-    {"$project":{"teamName":"$teams.name","teamId":"$teams.team_id","teamAchivement":"$teams.achivements",
+    {"$project":{"teamName":"$teams.name","abbreviation":"$teams.abbreviation","teamId":"$teams.team_id","teamAchivement":"$teams.achivements",
         "teamFacts":"$teams.facts","_id":0}}])
 
     for info in ipl_info:
@@ -61,13 +68,34 @@ def get_interational_teams_info():
 
     international_info = sports.aggregate([{"$unwind":"$teams"},
     {"$match":{"name":"Cricket","teams.team_type":"international"}},
-    {"$project":{"teamName":"$teams.name","teamId":"$teams.team_id","teamAchivement":"$teams.achivements",
+    {"$project":{"teamName":"$teams.name","abbreviation":"$teams.abbreviation","teamId":"$teams.team_id","teamAchivement":"$teams.achivements",
         "teamFacts":"$teams.facts","_id":0}}])
 
     for info in international_info:
         international_teams.append(info)
     
     return international_teams
+
+def get_teams():
+    cricket_teams = []
+
+    teams_info = sports.aggregate([
+    {
+        "$unwind":"$teams"
+    },
+    {
+        "$match":{"sports_id":"cr"}
+    },
+    {
+        "$project":{"sports_id":1,"teams.name":1,"teams.team_id":1,"teams.abbreviation":1,
+        "_id":0}
+    }
+    ])
+
+    for info in teams_info:
+        cricket_teams.append(info)
+    
+    return cricket_teams
 
 def get_players_of_a_team(teamId):
     team_players = []
@@ -105,3 +133,22 @@ def get_info_of_kabaddi():
         kabaddi_info.append(info)
 
     return kabaddi_info
+
+#polling for events of particular day
+def get_current_event():
+    current_info = []
+    cu_info = events.aggregate([
+    {
+        "$match":{"sports_id":"cr","timings.day": date}
+    },
+        
+    {
+        "$project":{"event_id":1,"sports_id":1,"timings":1,"team_ids":1,"image":1,"stadium":1,"_id":0}
+    }
+    ])
+
+
+    for info in cu_info:
+        current_info.append(info)
+
+    return current_info
